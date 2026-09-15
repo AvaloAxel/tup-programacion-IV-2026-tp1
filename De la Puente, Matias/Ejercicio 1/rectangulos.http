@@ -1,0 +1,55 @@
+@url=http://localhost:3000
+
+### Mensaje de bienvenida
+GET {{url}}
+
+### Listado de rectangulos
+GET {{url}}/rectangulos
+
+### Detalle de un rectangulo
+GET {{url}}/rectangulos/1
+
+### Detalle de un cuadrado
+GET {{url}}/rectangulos/2
+
+### Listado de cuadrados
+GET {{url}}/cuadrados
+
+### Crear un rectangulo
+POST {{url}}/rectangulos
+Content-Type: application/json
+
+{
+    "base": 15,
+    "altura": 5
+}
+
+### Crear un cuadrado
+POST {{url}}/rectangulos
+Content-Type: application/json
+
+{
+    "base": 20,
+    "altura": 20
+}
+
+### Modificar un rectangulo
+PUT {{url}}/rectangulos/3
+Content-Type: application/json
+
+{
+    "base": 20,
+    "altura": 4
+}
+
+### Modificar un rectangulo para convertirlo en cuadrado
+PUT {{url}}/rectangulos/1
+Content-Type: application/json
+
+{
+    "base": 6,
+    "altura": 6
+}
+
+### Eliminar un rectangulo
+DELETE {{url}}/rectangulos/4
