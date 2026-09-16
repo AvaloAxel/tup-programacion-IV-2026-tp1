@@ -1,0 +1,74 @@
+@url=http://localhost:3000
+
+### Mensaje de bienvenida
+GET {{url}}
+
+### Listado de alumnos
+GET {{url}}/alumnos
+
+### Detalle de alumno
+GET {{url}}/alumnos/1
+
+### Detalle de alumno reprobado
+GET {{url}}/alumnos/2
+
+### Detalle de alumno promocionado
+GET {{url}}/alumnos/3
+
+### Crear alumno
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Carlos",
+    "nota1": 7,
+    "nota2": 8,
+    "nota3": 6
+}
+
+### Crear alumno promocionado
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Lucia",
+    "nota1": 9,
+    "nota2": 8,
+    "nota3": 10
+}
+
+### Intentar crear alumno con nombre repetido
+POST {{url}}/alumnos
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "nota1": 8,
+    "nota2": 8,
+    "nota3": 8
+}
+
+### Modificar alumno
+PUT {{url}}/alumnos/1
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "nota1": 9,
+    "nota2": 9,
+    "nota3": 8
+}
+
+### Intentar modificar usando un nombre existente
+PUT {{url}}/alumnos/1
+Content-Type: application/json
+
+{
+    "nombre": "Pedro",
+    "nota1": 9,
+    "nota2": 9,
+    "nota3": 9
+}
+
+### Eliminar alumno
+DELETE {{url}}/alumnos/1
